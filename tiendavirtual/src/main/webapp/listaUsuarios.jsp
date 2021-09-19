@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Listado Usuarios</title>
+<title>Listado Usuarios </title>
 <link rel="stylesheet"
 	href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" />
 <link rel="stylesheet"
