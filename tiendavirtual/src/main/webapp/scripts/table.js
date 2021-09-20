@@ -1,12 +1,12 @@
 
 var saveme =  $.ajax({
-        type: "POST",
+        type: "GET",
         url: "http://localhost:8090/listarUsuarios", //ruta de la API consultaremos.
       
         success: function(data) {
-			const usuarios = JSON.parce(data);
+			const usuarios = JSON.parse(data);
 			let template='';
-			usuarios.forEach(usuario =>{
+			usuarios.forEach(usuario => {
 				template += `
 					<tr>
 						<td>${usuario.cedulaUsuario}</td>
@@ -19,7 +19,6 @@ var saveme =  $.ajax({
 					</tr>
 				`
 			});
-			$('cuerpoTabla').html(template);
-         });
-        }
+			$('#cuerpoTabla').html(template);
+         }
       });
