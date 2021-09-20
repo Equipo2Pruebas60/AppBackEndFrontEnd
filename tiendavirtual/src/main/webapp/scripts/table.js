@@ -26,22 +26,6 @@ var saveme =  $.ajax({
        	  tr.appendChild(columna4);
 	      tr.appendChild(columna5);
        	
-			template += `
-                  <tr taskId="${task.id}">
-                  <td>${task.id}</td>
-                  <td>
-                  <a href="#" class="task-item">
-                    ${task.name} 
-                  </a>
-                  </td>
-                  <td>${task.description}</td>
-                  <td>
-                    <button class="task-delete btn btn-danger">
-                     Delete 
-                    </button>
-                  </td>
-                  </tr>
-                `
 
          });
         }
