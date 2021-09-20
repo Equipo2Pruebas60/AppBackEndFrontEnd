@@ -43,11 +43,13 @@
 			<table class="table table-dark table-hover table-sm">
 				<thead>
 					<tr >
-						<th class="text-lowercase">Cedula</th>
-						<th class="text-lowercase">Email</th>
-						<th class="text-lowercase">Nombre</th>
-						<th class="text-lowercase">Contraseña</th>
-						<th class="text-lowercase">Usuario</th>
+						<td class="text-lowercase">Cedula</td>
+						<td class="text-lowercase">Email</td>
+						<td class="text-lowercase">Nombre</td>
+						<td class="text-lowercase">Contraseña</td>
+						<td class="text-lowercase">Usuario</td>
+						<td class="text-lowercase">Modificar</td>
+						<td class="text-lowercase">Eliminar</td>
 					</tr>
 				</thead>
 				<tbody id="cuerpoTabla" >

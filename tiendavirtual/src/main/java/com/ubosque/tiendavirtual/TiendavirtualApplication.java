@@ -15,5 +15,4 @@ public class TiendavirtualApplication {
 		Connection connection = new Connection(); 
 		connection.getConnection();
 	}
-
 }
