@@ -9,7 +9,7 @@
 	href="http://cdn.datatables.net/1.10.9/css/jquery.dataTables.min.css" />
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.11.4/themes/flick/jquery-ui.css">
-
+<link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>
 
