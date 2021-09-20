@@ -8,6 +8,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 @ComponentScan(basePackages = { "com.ubosque.DAO" })
 public class UsuarioController {
 
+	 
+	
 	@RequestMapping("/listarUsuarios")
 	public ArrayList<Usuario> listaUsuario() {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -23,15 +27,23 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/agregarUsuario")
-	public @ResponseBody void agregarUsuario(Usuario usuario) {
+	public void agregarUsuario(@RequestBody Usuario usuario) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		usuarioDAO.createUser(usuario);
+		 
 	}
 
 	@DeleteMapping("/eliminarUsuario/{cedula_usuario}")
 	public void eliminarUsuario(@PathVariable("cedula_usuario") int cedula_usuario) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		usuarioDAO.deleteUser(cedula_usuario);
+	}
+
+	@PutMapping("/actualizarUsuario/{cedula_usuario}")
+	public Usuario updatePerson(@PathVariable int cedula_usuario, @RequestBody Usuario usuario) {
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		usuarioDAO.updateUser(usuario);
+		return null;
 	}
 
 }

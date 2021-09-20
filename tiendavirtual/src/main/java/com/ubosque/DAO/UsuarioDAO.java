@@ -39,13 +39,15 @@ public class UsuarioDAO {
 
 	// METODO DE CREAR USUARIO
 	public void createUser(Usuario usuario) {
+		
+ 
+		
 		Connection connection = new Connection();
 		try {
 			String query = "INSERT INTO usuarios (cedula_usuario, email_usuario, nombre_usuario, password, usuario) VALUES (?,?,?,?,?)";
 			PreparedStatement statement = connection.getConnection().prepareStatement(query);
 			statement.setInt(1, usuario.getCedulaUsuario());
 			statement.setString(2, usuario.getEmailUsuario());
-			System.out.print(usuario.getEmailUsuario());
 			statement.setString(3, usuario.getNombreUsuario());
 			statement.setString(4, usuario.getPassword());
 			statement.setString(5, usuario.getUsuario());
@@ -55,7 +57,6 @@ public class UsuarioDAO {
 			connection.connection.close();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
-
 		}
 	}
 
