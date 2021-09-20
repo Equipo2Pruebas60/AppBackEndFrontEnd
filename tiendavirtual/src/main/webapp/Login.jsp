@@ -30,12 +30,11 @@
 						<p>Subir archivos</p> <input type="file" id="file-upload"
 						name="file-upload" onchange="nameFile()">
 				</div>
-				 
-					<div class="campos bg-info d-grid gap-2">
-						<input type="submit" class="btn btn-primary"
-							value="Iniciar Sesión" />
-					</div>
-			 
+
+				<div class="campos bg-info d-grid gap-2">
+					<input type="submit" class="btn btn-primary" value="Iniciar Sesión" />
+				</div>
+
 			</form>
 
 		</div>
