@@ -37,39 +37,71 @@
 		</div>
 	</nav>
 
-	<div class="container-fluid row p-4">
-		<div class="col-md-8 bg-info">
+	<div class="container-fluid row pl-0  ">
+		<div class="col-md-9  p-2">
+			<div class="table-responsive ">
+				<table
+					class="table table-dark table-hover table-sm table-bordered  ">
+					<thead>
+						<tr>
+							<td class="text-lowercase" style="font-size: 16px;">Cedula</td>
+							<td class="text-lowercase" style="font-size: 16px;">Email</td>
+							<td class="text-lowercase" style="font-size: 16px;">Nombre</td>
+							<td class="text-lowercase" style="font-size: 16px;">Contraseña</td>
+							<td class="text-lowercase" style="font-size: 16px;">Usuario</td>
+							<td class="text-lowercase" style="font-size: 16px;">Modificar</td>
+							<td class="text-lowercase" style="font-size: 16px;">Eliminar</td>
+						</tr>
+					</thead>
+					<tbody id="cuerpoTabla">
 
-			<table class="table table-dark table-hover table-sm">
-				<thead>
-					<tr >
-						<td class="text-lowercase">Cedula</td>
-						<td class="text-lowercase">Email</td>
-						<td class="text-lowercase">Nombre</td>
-						<td class="text-lowercase">Contraseña</td>
-						<td class="text-lowercase">Usuario</td>
-						<td class="text-lowercase">Modificar</td>
-						<td class="text-lowercase">Eliminar</td>
-					</tr>
-				</thead>
-				<tbody id="cuerpoTabla" >
+					</tbody>
+				</table>
 
-				</tbody>
-			</table>
-
+			</div>
 		</div>
+		<div class="col-md-3 p-2 border-top-0">
+			<div class="container">
+				<form>
+					<div class="form-group">
+						<label for="cedula">Cedula</label> <input type="text"
+							class="form-control" id="cedula" placeholder="Ingresar cedula">
+					</div>
 
-		<div class="col-md-4 p-2 bg-danger">B</div>
+					<div class="form-group">
+						<label for="email">Email</label> <input type="email"
+							class="form-control" id="email" placeholder="Ingresar cedula">
+					</div>
+
+					<div class="form-group">
+						<label for="nombre">Nombre</label> <input type="text"
+							class="form-control" id="nombre" placeholder="Ingresar nombre">
+					</div>
+
+					<div class="form-group">
+						<label for="clave">Password</label> <input type="password"
+							class="form-control" id="clave" placeholder="Ingresar contraseña">
+					</div>
+
+					<div class="form-group">
+						<label for="usuario">Usuario</label> <input type="text"
+							class="form-control" id="usuario" placeholder="Ingresar usuario">
+					</div>
+					
+					<div class="d-grid gap-2">
+						<button type="submit" class="btn btn-primary mt-3">Submit</button>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
 
 
- 	<script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+		crossorigin="anonymous"></script>
 
 	<script src="scripts/table.js"></script>
-
 
 </body>
 </html>
