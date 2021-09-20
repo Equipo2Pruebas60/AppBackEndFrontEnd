@@ -28,11 +28,17 @@
 		</tbody>
 	</table>
 
-	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
-	<script src="scripts/table.js"></script>
 
- 
+
+	<script src="scripts/table.js"></script>
+	<script src="/lib/jquery.min.js"></script>
+<script src="/lib/jquery.plugin.js"></script>
+
+	<script
+		src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js">
+		
+	</script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </body>
 </html>
