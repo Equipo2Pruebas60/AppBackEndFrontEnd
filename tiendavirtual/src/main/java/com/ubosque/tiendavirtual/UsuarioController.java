@@ -30,7 +30,6 @@ public class UsuarioController {
 	public void agregarUsuario(@RequestBody Usuario usuario) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		usuarioDAO.createUser(usuario);
-		 
 	}
 
 	@DeleteMapping("/eliminarUsuario/{cedula_usuario}")
@@ -40,10 +39,9 @@ public class UsuarioController {
 	}
 
 	@PutMapping("/actualizarUsuario/{cedula_usuario}")
-	public Usuario updatePerson(@PathVariable int cedula_usuario, @RequestBody Usuario usuario) {
+	public void updatePerson(@PathVariable int cedula_usuario, @RequestBody Usuario usuario) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		usuarioDAO.updateUser(usuario);
-		return null;
 	}
 
 }

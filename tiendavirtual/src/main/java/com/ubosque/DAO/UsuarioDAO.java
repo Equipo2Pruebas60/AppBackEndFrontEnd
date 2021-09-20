@@ -7,8 +7,7 @@ import javax.swing.JOptionPane;
 
 public class UsuarioDAO {
 
-	// CREACION METODOS DEL CRUD
-
+	// CREACIÓN METODOS DEL CRUD
 	public ArrayList<Usuario> ListUsers() {
 		ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 		Connection connection = new Connection();
@@ -26,22 +25,16 @@ public class UsuarioDAO {
 
 				usuarios.add(usuario);
 			}
-
 			result.close();
 			statement.close();
-
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, "no se pudo realizar la consulta\n" + e);
 		}
-
 		return usuarios;
 	}
 
-	// METODO DE CREAR USUARIO
+	// METODO CREAR USUARIO
 	public void createUser(Usuario usuario) {
-		
- 
-		
 		Connection connection = new Connection();
 		try {
 			String query = "INSERT INTO usuarios (cedula_usuario, email_usuario, nombre_usuario, password, usuario) VALUES (?,?,?,?,?)";
@@ -73,7 +66,6 @@ public class UsuarioDAO {
 			System.out.println("Se eliminó el usuario");
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
-
 		}
 	}
 
