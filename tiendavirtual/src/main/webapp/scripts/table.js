@@ -7,6 +7,7 @@ var saveme =  $.ajax({
           $.each(data, function(i, item) {
           lista = document.getElementById("cuerpoTabla");
           var tr = document.createElement("tr");
+	 
           var columna1 = document.createElement("th")
           columna1.innerHTML = item.cedulaUsuario;
           var columna2 = document.createElement("th")
@@ -24,7 +25,24 @@ var saveme =  $.ajax({
           tr.appendChild(columna3);
        	  tr.appendChild(columna4);
 	      tr.appendChild(columna5);
-       
+       	
+			template += `
+                  <tr taskId="${task.id}">
+                  <td>${task.id}</td>
+                  <td>
+                  <a href="#" class="task-item">
+                    ${task.name} 
+                  </a>
+                  </td>
+                  <td>${task.description}</td>
+                  <td>
+                    <button class="task-delete btn btn-danger">
+                     Delete 
+                    </button>
+                  </td>
+                  </tr>
+                `
+
          });
         }
       });

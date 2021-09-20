@@ -2,12 +2,14 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
-<link rel="stylesheet" href="./css/login.css">
-<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
+
 <body>
 	<div class="contenedor">
 		<div class="formulario sombra-dark">
