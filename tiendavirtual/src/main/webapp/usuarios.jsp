@@ -62,9 +62,8 @@
 		</div>
 
 		<div class="col-md-3 p-2 ">
-			 
 				<div class="container p-2" style="border: 1px solid #BEB8B6;">
-					<form>
+					<form id="formulario">
 						<div class="form-group">
 							<label for="cedula">Cedula</label> <input type="text"
 								class="form-control" id="cedula" placeholder="Ingresar cedula">
@@ -105,7 +104,7 @@
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		crossorigin="anonymous"></script>
 
-	<script src="scripts/table.js"></script>
+	<script src="scripts/usuarios.js"></script>
 
 </body>
 </html>

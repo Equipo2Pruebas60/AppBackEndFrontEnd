@@ -2,12 +2,33 @@
 $(document).ready(function(){
 	console.log('Funcionando');
 	listado();
-})
+});
+
+$("#formulario").submit(e =>{
+	const datos ={
+		cedulaUsuario :$("#cedula").val(),
+	 	emailUsuario:$("#email").val(),
+	  	nombreUsuario:$("#nombre").val(),
+	 	password:$("#clave").val(),
+	 	usuario:$("#usuario").val()
+	}
+	console.log(datos);
+	
+	$.ajax({
+         type: "POST",
+         url: 'https://localhost:8090/agregarUsuario',
+		data: JSON.stringify({datos}),
+         success: function(data){
+             console.log(data);
+         }
+    });
+});
+
 
 function listado(){
    $.ajax({
         type: "GET",
-        url: "http://localhost:8090/listarUsuarios", //ruta de la API consultaremos.
+        url: "http://localhost:8090/listarUsuarios",  
       
         success: function(data) {
 			const usuarios = data;
