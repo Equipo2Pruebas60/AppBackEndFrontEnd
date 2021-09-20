@@ -60,39 +60,43 @@
 
 			</div>
 		</div>
-		<div class="col-md-3 p-2 border-top-0">
-			<div class="container">
-				<form>
-					<div class="form-group">
-						<label for="cedula">Cedula</label> <input type="text"
-							class="form-control" id="cedula" placeholder="Ingresar cedula">
-					</div>
 
-					<div class="form-group">
-						<label for="email">Email</label> <input type="email"
-							class="form-control" id="email" placeholder="Ingresar cedula">
-					</div>
+		<div class="col-md-3 p-2 ">
+			 
+				<div class="container p-2" style="border: 1px solid #BEB8B6;">
+					<form>
+						<div class="form-group">
+							<label for="cedula">Cedula</label> <input type="text"
+								class="form-control" id="cedula" placeholder="Ingresar cedula">
+						</div>
 
-					<div class="form-group">
-						<label for="nombre">Nombre</label> <input type="text"
-							class="form-control" id="nombre" placeholder="Ingresar nombre">
-					</div>
+						<div class="form-group">
+							<label for="email">Email</label> <input type="email"
+								class="form-control" id="email" placeholder="Ingresar cedula">
+						</div>
 
-					<div class="form-group">
-						<label for="clave">Password</label> <input type="password"
-							class="form-control" id="clave" placeholder="Ingresar contraseña">
-					</div>
+						<div class="form-group">
+							<label for="nombre">Nombre</label> <input type="text"
+								class="form-control" id="nombre" placeholder="Ingresar nombre">
+						</div>
 
-					<div class="form-group">
-						<label for="usuario">Usuario</label> <input type="text"
-							class="form-control" id="usuario" placeholder="Ingresar usuario">
-					</div>
-					
-					<div class="d-grid gap-2">
-						<button type="submit" class="btn btn-primary mt-3">Submit</button>
-					</div>
-				</form>
-			</div>
+						<div class="form-group">
+							<label for="clave">Password</label> <input type="password"
+								class="form-control" id="clave"
+								placeholder="Ingresar contraseña">
+						</div>
+
+						<div class="form-group">
+							<label for="usuario">Usuario</label> <input type="text"
+								class="form-control" id="usuario" placeholder="Ingresar usuario">
+						</div>
+
+						<div class="d-grid gap-2">
+							<button type="submit" class="btn btn-primary mt-3">Submit</button>
+						</div>
+					</form>
+				</div>
+	 
 		</div>
 	</div>
 
