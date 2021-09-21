@@ -19,12 +19,16 @@ import org.springframework.web.bind.annotation.RestController;
 @ComponentScan(basePackages = { "com.ubosque.DAO" })
 public class UsuarioController {
 
-	 
-	
 	@RequestMapping("/listarUsuarios")
 	public ArrayList<Usuario> listaUsuario() {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		return usuarioDAO.ListUsers();
+	}
+	
+	@RequestMapping("/listarUsuarios/{cedula_usuario}")
+	public ArrayList<Usuario> listaUsuarioUno(@PathVariable("cedula_usuario") int cedula) {
+		UsuarioDAO usuarioDAO = new UsuarioDAO();
+		return usuarioDAO.ListUser(cedula);
 	}
 
 	@PostMapping("/agregarUsuario")
@@ -44,5 +48,5 @@ public class UsuarioController {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		usuarioDAO.updateUser(usuario);
 	}
-
+	
 }

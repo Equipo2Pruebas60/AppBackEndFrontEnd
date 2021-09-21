@@ -33,6 +33,33 @@ public class UsuarioDAO {
 		return usuarios;
 	}
 
+	// METODO OBTENER 1 USUARIO
+	public ArrayList<Usuario> ListUser(int cedula_usuario) {
+		ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
+		Connection connection = new Connection();
+
+		try {
+			PreparedStatement statement = connection.getConnection().prepareStatement("SELECT * FROM usuarios WHERE cedula_usuario=?");
+			statement.setInt(1,cedula_usuario);
+			ResultSet result = statement.executeQuery();
+			while (result.next()) {
+				Usuario usuario = new Usuario();
+				usuario.setCedulaUsuario(Integer.parseInt(result.getString("cedula_usuario")));
+				usuario.setEmailUsuario(result.getString("email_usuario"));
+				usuario.setNombreUsuario(result.getString("nombre_usuario"));
+				usuario.setPassword(result.getString("password"));
+				usuario.setUsuario(result.getString("usuario"));
+
+				usuarios.add(usuario);
+			}
+			result.close();
+			statement.close();
+		} catch (SQLException e) {
+			JOptionPane.showMessageDialog(null, "no se pudo realizar la consulta\n" + e);
+		}
+		return usuarios;
+	}
+
 	// METODO CREAR USUARIO
 	public void createUser(Usuario usuario) {
 		Connection connection = new Connection();
@@ -98,4 +125,5 @@ public class UsuarioDAO {
 		}
 	}
 
+	
 }

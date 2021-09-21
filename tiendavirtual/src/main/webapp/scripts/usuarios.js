@@ -2,7 +2,7 @@
 $(document).ready(function(){
 	console.log('Funcionando');
 	listado();
-
+	let flag = false;
 $("#formulario").submit(e =>{
 	e.preventDefault();
 	
@@ -13,11 +13,21 @@ $("#formulario").submit(e =>{
 	 	password: $("#clave").val(),
 	 	usuario: $("#usuario").val()
 	};
-	console.log(datos);
-	
+	const cedula =  $("#cedula").val();
+	console.log(cedula);
+	let url = '';
+	let type= '';
+	if(flag){
+		url = "http://localhost:8090/actualizarUsuario/"+cedula;
+		type= "PUT";
+	}else{
+		url = "http://localhost:8090/agregarUsuario";
+		type= "POST";
+	}
+	console.log(url);
 	$.ajax({
-            type: "POST",
-            url: "http://localhost:8090/agregarUsuario",
+            type: type,
+            url: url,
             async: false,
             data: JSON.stringify({ cedulaUsuario: $("#cedula").val(), emailUsuario: $("#email").val(),nombreUsuario:$("#nombre").val(),password: $("#clave").val(), usuario: $("#usuario").val()}),
             contentType: "application/json",
@@ -25,9 +35,11 @@ $("#formulario").submit(e =>{
             console.log(data); 
 		 	listado();
 			limpiadoCampos();	
+			flag = false;
         }
     });
 });
+
 function limpiadoCampos(){
 		  $("#cedula").val("");
 	 	  $("#email").val("");
@@ -73,6 +85,24 @@ function listado(){
 		
 	});
 	$(document).on('click','.modificar',(response)=> {
-		console.log('cLICK BORRAR');
+			const cedula = $(this)[0].activeElement;
+			const cedula_usuario = $(cedula).attr('id');
+			console.log(cedula_usuario);
+		 $.ajax({
+			type:"GET",
+			url:"http://localhost:8090/listarUsuarios/"+cedula_usuario,
+			success: function(response){
+				console.log(response);
+				const usuario = response[0];
+				console.log(usuario);
+				$("#cedula").val(usuario.cedulaUsuario);
+			 	$("#email").val(usuario.emailUsuario);
+			  	$("#nombre").val(usuario.nombreUsuario);
+			 	$("#clave").val(usuario.password);
+			 	$("#usuario").val(usuario.usuario);
+				flag = true;
+				
+			}
+		})
 	});
 });
