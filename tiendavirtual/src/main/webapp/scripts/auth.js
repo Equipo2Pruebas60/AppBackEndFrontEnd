@@ -5,6 +5,7 @@ $(document).ready(function(){
 	$("#formulario").submit(e => {
 		e.preventDefault();
 	 	
+	
 		$.ajax({
 			type:"POST",
 			async: false,
