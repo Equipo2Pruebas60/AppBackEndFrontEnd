@@ -47,6 +47,8 @@ $(document).ready(function(){
 					flag = false;
 					
 					alert(mensaje);
+					
+					$("#cedula").removeAttr('disabled');
 	        }
 	    });
 	});
@@ -118,12 +120,8 @@ $(document).ready(function(){
 			  	$("#nombre").val(usuario.nombreUsuario);
 			 	$("#clave").val(usuario.password);
 			 	$("#usuario").val(usuario.usuario);
-				flag = true;
-				
-				var btnCancelar = $("#cancelarOP");
-				btnCancelar.css("display","none");
-				
-				$("#cedula").removeAttr('disabled');
+				flag = true;	
+		
 			}
 		});
 		
