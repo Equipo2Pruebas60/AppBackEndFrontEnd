@@ -8,6 +8,7 @@ public class Usuario {
 	private String password;
 	private String usuario;
 	
+	
 	//Método getter and setter
 	public int getCedulaUsuario() {
 		return cedulaUsuario;

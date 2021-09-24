@@ -137,6 +137,7 @@ $(document).ready(function(){
 		
 	});
 	
+	
 	$(document).on('click','.cancelar',(response)=> {	
 		
 		limpiadoCampos();

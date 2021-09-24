@@ -33,6 +33,7 @@ $(document).ready(function(){
 		}
 
 
+
 		$.ajax({
 	            type: type,
 	            url: url,

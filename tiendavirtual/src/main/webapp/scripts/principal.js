@@ -14,6 +14,7 @@ $(document).ready(function(){
 	 return null;
 	}
 
+
 	let valor = obtenerValorParametro('cedula_usuario');
 	  if (valor){
 	    alert(valor);

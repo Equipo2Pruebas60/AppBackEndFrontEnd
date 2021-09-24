@@ -18,6 +18,7 @@ public class ClienteDAO {
 			PreparedStatement statement = connection.getConnection().prepareStatement("Select * from Clientes");
 			ResultSet result = statement.executeQuery();
 
+			
 			while (result.next()) {
 				Clientes cliente = new Clientes();
 				cliente.setCedulaCliente(result.getInt("cedula_cliente"));

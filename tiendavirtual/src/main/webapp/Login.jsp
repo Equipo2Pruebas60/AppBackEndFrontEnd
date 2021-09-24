@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="css/login.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
-
 <body>
 	<div class="contenedor">
 		<div class="formulario sombra-dark">

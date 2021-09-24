@@ -13,6 +13,7 @@ public class UsuarioDAO {
 		ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 		Connection connection = new Connection();
 
+		
 		try {
 			PreparedStatement statement = connection.getConnection().prepareStatement("SELECT * FROM usuarios Where cedula_usuario !=1");
 			ResultSet result = statement.executeQuery();

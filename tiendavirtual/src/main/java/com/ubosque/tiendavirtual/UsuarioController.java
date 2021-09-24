@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class UsuarioController {
 
+	
 	@RequestMapping("usuarios")
 	public ArrayList<Usuario> listaUsuario() {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();

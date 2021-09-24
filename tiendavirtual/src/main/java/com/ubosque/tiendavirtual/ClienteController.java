@@ -38,6 +38,7 @@ public class ClienteController {
 		clienteDAO.crearCliente(cliente);
 	}
 
+	
 	@PutMapping("actualizar/{cedula_cliente}")
 	public void updateCliente(@PathVariable("cedula_cliente") int cedula_cliente, @RequestBody Clientes cliente) {
 		ClienteDAO clienteDAO = new ClienteDAO();
