@@ -81,7 +81,6 @@ public class UsuarioDAO {
 	}
 
 	// METODO ELIMINAR USUARIO
-
 	public void deleteUser(int cedula_usuario) {
 		Connection connection = new Connection();
 		try {
@@ -124,6 +123,29 @@ public class UsuarioDAO {
 			System.out.println(e.getMessage());
 		}
 	}
-
 	
+	//Login 
+	public int login(String usuario, String password) {
+		Connection connection = new Connection();
+		int cedula = 0;
+		try {
+			String query = "SELECT cedula_usuario FROM usuarios WHERE usuario= ? and  password= ?";
+			PreparedStatement statement = connection.getConnection().prepareStatement(query);
+			statement.setString(1, usuario);
+			statement.setString(2, password);
+			ResultSet resultSet = statement.executeQuery();
+			if (resultSet.next()) {
+				cedula = Integer.parseInt(resultSet.getString("cedula_usuario"));
+				System.out.println("Existe el usuario \n");
+			} else {
+				System.out.println("El usuario no se encuentra registrado en la tienda generica");
+			}
+			resultSet.close();
+			statement.close();
+			connection.connection.close();
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return cedula;
+	}
 }

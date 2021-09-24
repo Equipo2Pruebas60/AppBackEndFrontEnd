@@ -15,10 +15,10 @@
 		<div class="formulario sombra-dark">
 			<h1>Iniciar Sesión</h1>
 
-			<form method="POST" action="#">
+			<form id="formulario">
 				<div class="campos">
-					<label htmlFor="email">Email</label> <input type="email" id="email"
-						name="email" placeholder="Ingresa tu email" />
+					<label htmlFor="usuario">Usuario</label> <input type="text" id="usuario"
+						name="usuario" placeholder="Ingresa tu usuario" />
 				</div>
 
 				<div class="campos">
@@ -26,12 +26,6 @@
 						id="password" name="password" placeholder="Ingresa tu contraseña" />
 				</div>
 
-				<div class="campos">
-					<label for="file-upload" class="upload"> <i
-						class="fas fa-cloud-upload-alt"></i>
-						<p>Subir archivos</p> <input type="file" id="file-upload"
-						name="file-upload" onchange="nameFile()">
-				</div>
 
 				<div class="campos bg-info d-grid gap-2">
 					<input type="submit" class="btn btn-primary" value="Iniciar Sesión" />
@@ -44,8 +38,7 @@
 
 	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<script
-		src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
-
+	<script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
+	<script src="scripts/auth.js"></script>
 </body>
 </html>
