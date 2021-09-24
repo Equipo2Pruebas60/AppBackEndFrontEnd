@@ -22,12 +22,12 @@ $(document).ready(function(){
 		let url = '';
 		let type= '';
 		if(flag){
-			url = "http://localhost:8090/api/usuarios/"+cedula;
+			url = "http://localhost:8090/usuarios/actualizar/"+cedula;
 			type= "PUT";
 			mensaje="Datos del Usuario Actualizados";
 			
 		}else{
-			url = "http://localhost:8090/api/usuarios";
+			url = "http://localhost:8090/usuarios/guardar";
 			type= "POST";
 			mensaje="Usuario Creado";
 		}
@@ -66,7 +66,7 @@ $(document).ready(function(){
 	function listado(){
 	   $.ajax({
 	        type: "GET",
-	        url: "http://localhost:8090/api/usuarios",  
+	        url: "http://localhost:8090/usuarios/listar",  
 	        success: function(data) {
 				const usuarios = data;
 				let template='';
@@ -93,7 +93,7 @@ $(document).ready(function(){
 		const cedula = $(".borrar").attr('id');
  		$.ajax({
 			type:"DELETE",
-			url:"http://localhost:8090/api/usuarios/"+cedula,
+			url:"http://localhost:8090/usuarios/eliminar/"+cedula,
 			success: function(response){
 				listado();
 				alert("Datos del Usuario Borrados");
@@ -112,7 +112,7 @@ $(document).ready(function(){
 	 	
 		 $.ajax({
 			type:"GET",
-			url:"http://localhost:8090/api/usuarios/"+cedula_usuario,
+			url:"http://localhost:8090/usuarios/listar/"+cedula_usuario,
 			success: function(response){
 				console.log(response);
 				const usuario = response[0];
@@ -123,7 +123,6 @@ $(document).ready(function(){
 			 	$("#clave").val(usuario.password);
 			 	$("#usuario").val(usuario.usuario);
 				flag = true;	
-		
 			}
 		});
 		
@@ -146,7 +145,7 @@ $(document).ready(function(){
 			 	
 		 $.ajax({
 			type:"GET",
-			url:"http://localhost:8090/api/usuarios/"+cedula_usuario,
+			url:"http://localhost:8090/usuarios/listar/"+cedula_usuario,
 			success: function(response){
 
 				const usuario = response[0];

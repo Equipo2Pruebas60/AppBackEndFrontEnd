@@ -17,35 +17,35 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @ComponentScan(basePackages = { "com.ubosque.DAO" })
-@RequestMapping("/api")
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
 	
-	@RequestMapping("usuarios")
+	@RequestMapping("listar")
 	public ArrayList<Usuario> listaUsuario() {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		return usuarioDAO.ListUsers();
 	}
 	
-	@RequestMapping("usuarios/{cedula_usuario}")
+	@RequestMapping("listar/{cedula_usuario}")
 	public ArrayList<Usuario> listaUsuarioUno(@PathVariable("cedula_usuario") int cedula) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		return usuarioDAO.ListUser(cedula);
 	}
 
-	@PostMapping("usuarios")
+	@PostMapping("guardar")
 	public void agregarUsuario(@RequestBody Usuario usuario) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		usuarioDAO.createUser(usuario);
 	}
 
-	@DeleteMapping("usuarios/{cedula_usuario}")
+	@DeleteMapping("eliminar/{cedula_usuario}")
 	public void eliminarUsuario(@PathVariable("cedula_usuario") int cedula_usuario) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		usuarioDAO.deleteUser(cedula_usuario);
 	}
 
-	@PutMapping("usuarios/{cedula_usuario}")
+	@PutMapping("actualizar/{cedula_usuario}")
 	public void updatePerson(@PathVariable int cedula_usuario, @RequestBody Usuario usuario) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		usuarioDAO.updateUser(usuario);
