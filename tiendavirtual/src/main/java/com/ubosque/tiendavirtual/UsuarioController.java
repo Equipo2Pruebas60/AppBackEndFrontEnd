@@ -53,7 +53,6 @@ public class UsuarioController {
 	@PostMapping("usuarios/auth")
 	public int auth(@RequestBody Usuario usuario) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
-		System.out.print("Click");
 		return usuarioDAO.login(usuario.getUsuario(), usuario.getPassword());
 	}
 	

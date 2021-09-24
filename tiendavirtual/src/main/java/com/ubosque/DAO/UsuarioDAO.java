@@ -13,7 +13,7 @@ public class UsuarioDAO {
 		Connection connection = new Connection();
 
 		try {
-			PreparedStatement statement = connection.getConnection().prepareStatement("SELECT * FROM usuarios");
+			PreparedStatement statement = connection.getConnection().prepareStatement("SELECT * FROM usuarios Where cedula_usuario !=1");
 			ResultSet result = statement.executeQuery();
 			while (result.next()) {
 				Usuario usuario = new Usuario();

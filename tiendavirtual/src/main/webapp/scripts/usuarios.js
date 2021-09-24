@@ -3,7 +3,9 @@ $(document).ready(function(){
 	console.log('Funcionando');
 	listado();
 	let flag = false;
-
+	var btnCancelar = $("#cancelarOP");
+	btnCancelar.css("display","none");
+		
 	$("#formulario").submit(e =>{
 		e.preventDefault();
 		
@@ -14,6 +16,7 @@ $(document).ready(function(){
 		 	password: $("#clave").val(),
 		 	usuario: $("#usuario").val()
 		};
+		
 		const cedula =  $("#cedula").val();
 		console.log(cedula);
 		let url = '';
@@ -41,7 +44,6 @@ $(document).ready(function(){
 	    });
 	});
 
-
 	function limpiadoCampos(){
 			  $("#cedula").val("");
 		 	  $("#email").val("");
@@ -63,10 +65,11 @@ $(document).ready(function(){
 							<td style="font-size: 13px">${usuario.cedulaUsuario}</td>
 							<td style="font-size: 13px">${usuario.emailUsuario}</td>
 							<td style="font-size: 13px">${usuario.nombreUsuario}</td>
-							<td style="font-size: 13px">${usuario.password}</td>
 							<td style="font-size: 13px">${usuario.usuario}</td>
-							<td style="font-size: 13px"><button id="${usuario.cedulaUsuario}"   type="button" class="btn btn-info modificar">Modificar</button></td>
-							<td style="font-size: 13px"><button id="${usuario.cedulaUsuario}" type="button" class="btn btn-danger borrar">Eliminar</button></td>
+							<td style="font-size: 13px" ><button id="${usuario.cedulaUsuario}"   type="button" class="btn btn-info ver p-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver</button></td>
+							<td style="font-size: 13px" ><button id="${usuario.cedulaUsuario}"   type="button" class="btn btn-info modificar p-1">Modificar</button></td>
+							<td style="font-size: 13px" ><button id="${usuario.cedulaUsuario}"   type="button" class="btn btn-danger borrar p-1" >Eliminar</button></td>
+							
 						</tr>
 					`
 				});
@@ -90,6 +93,12 @@ $(document).ready(function(){
 			const cedula = $(this)[0].activeElement;
 			const cedula_usuario = $(cedula).attr('id');
 			console.log(cedula_usuario);
+			
+			var btnCancelar = $("#cancelarOP");
+			btnCancelar.css("display","block");
+			
+			$("#cedula").attr('disabled',true);
+	 	
 		 $.ajax({
 			type:"GET",
 			url:"http://localhost:8090/api/usuarios/"+cedula_usuario,
@@ -104,7 +113,40 @@ $(document).ready(function(){
 			 	$("#usuario").val(usuario.usuario);
 				flag = true;
 			}
-		})
+		});
+		
+	});
+	
+	$(document).on('click','.cancelar',(response)=> {	
+		limpiadoCampos();
+		flag = false;
+		var btnCancelar = $("#cancelarOP");
+		btnCancelar.css("display","none");
+		$("#cedula").removeAttr('disabled');
+	});
+	
+	
+	$(document).on('click','.ver',(response)=> {
+			const cedula = $(this)[0].activeElement;
+			const cedula_usuario = $(cedula).attr('id');
+			console.log(cedula_usuario);
+			 	
+		 $.ajax({
+			type:"GET",
+			url:"http://localhost:8090/api/usuarios/"+cedula_usuario,
+			success: function(response){
+				console.log(response);
+				const usuario = response[0];
+				console.log(usuario);
+				$("#cedula_modal").html(usuario.cedulaUsuario);
+			 	$("#email_modal").html(usuario.emailUsuario);
+			  	$("#nombre_modal").html(usuario.nombreUsuario);
+			 	$("#clave_modal").html(usuario.password);
+			 	$("#usuario_modal").html(usuario.usuario);
+				
+			}
+		});
+		
 	});
 	
 	
