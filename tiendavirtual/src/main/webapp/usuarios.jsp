@@ -67,33 +67,33 @@
 				<form id="formulario">
 					<div class="form-group">
 						<label for="cedula">Cedula</label> <input type="text"
-							class="form-control" id="cedula" placeholder="Ingresar cedula">
+							class="form-control" id="cedula" placeholder="Ingresar cedula" required>
 					</div>
 
 					<div class="form-group">
 						<label for="email">Email</label> <input type="email"
-							class="form-control" id="email" placeholder="Ingresar cedula">
+							class="form-control" id="email" placeholder="Ingresar cedula" required>
 					</div>
 
 					<div class="form-group">
 						<label for="nombre">Nombre</label> <input type="text"
-							class="form-control" id="nombre" placeholder="Ingresar nombre">
+							class="form-control" id="nombre" placeholder="Ingresar nombre" required>
 					</div>
 
 					<div class="form-group">
 						<label for="clave">Password</label> <input type="password"
-							class="form-control" id="clave" placeholder="Ingresar contraseña">
+							class="form-control" id="clave" placeholder="Ingresar contraseña" required>
 					</div>
 
 					<div class="form-group">
 						<label for="usuario">Usuario</label> <input type="text"
-							class="form-control" id="usuario" placeholder="Ingresar usuario">
+							class="form-control" id="usuario" placeholder="Ingresar usuario" required>
 					</div>
 
 					<div class="row">
 						<div class="col-md-8">
 							<div class="d-grid gap-2">
-								<button type="submit" class="btn btn-primary mt-3">Submit</button>
+								<button type="submit" class="btn btn-primary mt-3">Crear</button>
 							</div>
 						</div>
 						<div class="col-md-4">
@@ -123,7 +123,6 @@
 				
 				Cedula     :<label id="cedula_modal"></label><br>
 				Email	   :<label id="email_modal"></label><br>
-				Nombre     :<label id="nombre_modal"></label><br>
 				Contraseña : <label id="clave_modal"></label><br>
 				Usuario    : <label id="usuario_modal"></label><br>
 				

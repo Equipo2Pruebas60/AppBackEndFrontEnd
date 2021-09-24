@@ -24,9 +24,11 @@ $(document).ready(function(){
 		if(flag){
 			url = "http://localhost:8090/api/usuarios/"+cedula;
 			type= "PUT";
+			mensaje="Usuario Creado";
 		}else{
 			url = "http://localhost:8090/api/usuarios";
 			type= "POST";
+			mensaje="Datos del Usuario Actualizados";
 		}
 		console.log(url);
 		$.ajax({
@@ -40,6 +42,7 @@ $(document).ready(function(){
 			 	listado();
 				limpiadoCampos();	
 				flag = false;
+				alert(mensaje);
 	        }
 	    });
 	});
@@ -85,6 +88,7 @@ $(document).ready(function(){
 			url:"http://localhost:8090/api/usuarios/"+cedula,
 			success: function(response){
 				listado();
+				alert("Datos del Usuario Borrados");
 			}
 		});
 	});

@@ -7,7 +7,8 @@ import javax.swing.JOptionPane;
 
 public class UsuarioDAO {
 
-	// CREACIÓN METODOS DEL CRUD
+	// Metodos Crud
+	// Metodo listar Usuarios
 	public ArrayList<Usuario> ListUsers() {
 		ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 		Connection connection = new Connection();
