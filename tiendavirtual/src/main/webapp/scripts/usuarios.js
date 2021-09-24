@@ -24,11 +24,12 @@ $(document).ready(function(){
 		if(flag){
 			url = "http://localhost:8090/api/usuarios/"+cedula;
 			type= "PUT";
-			mensaje="Usuario Creado";
+			mensaje="Datos del Usuario Actualizados";
+			
 		}else{
 			url = "http://localhost:8090/api/usuarios";
 			type= "POST";
-			mensaje="Datos del Usuario Actualizados";
+			mensaje="Usuario Creado";
 		}
 
 
