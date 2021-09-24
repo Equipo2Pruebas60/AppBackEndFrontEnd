@@ -18,7 +18,7 @@ $(document).ready(function(){
 		};
 		
 		const cedula =  $("#cedula").val();
-		console.log(cedula);
+
 		let url = '';
 		let type= '';
 		if(flag){
@@ -30,7 +30,8 @@ $(document).ready(function(){
 			type= "POST";
 			mensaje="Datos del Usuario Actualizados";
 		}
-		console.log(url);
+
+
 		$.ajax({
 	            type: type,
 	            url: url,
@@ -38,11 +39,14 @@ $(document).ready(function(){
 	            data: JSON.stringify({ cedulaUsuario: $("#cedula").val(), emailUsuario: $("#email").val(),nombreUsuario:$("#nombre").val(),password: $("#clave").val(), usuario: $("#usuario").val()}),
 	            contentType: "application/json",
 	            complete: function (data) {
-	            console.log(data); 
-			 	listado();
-				limpiadoCampos();	
-				flag = false;
-				alert(mensaje);
+
+				 	listado();
+				
+					limpiadoCampos();	
+					
+					flag = false;
+					
+					alert(mensaje);
 	        }
 	    });
 	});
@@ -96,7 +100,6 @@ $(document).ready(function(){
 	$(document).on('click','.modificar',(response)=> {
 			const cedula = $(this)[0].activeElement;
 			const cedula_usuario = $(cedula).attr('id');
-			console.log(cedula_usuario);
 			
 			var btnCancelar = $("#cancelarOP");
 			btnCancelar.css("display","block");
@@ -116,6 +119,11 @@ $(document).ready(function(){
 			 	$("#clave").val(usuario.password);
 			 	$("#usuario").val(usuario.usuario);
 				flag = true;
+				
+				var btnCancelar = $("#cancelarOP");
+				btnCancelar.css("display","none");
+				
+				$("#cedula").removeAttr('disabled');
 			}
 		});
 		
@@ -123,7 +131,9 @@ $(document).ready(function(){
 	
 	$(document).on('click','.cancelar',(response)=> {	
 		limpiadoCampos();
+		
 		flag = false;
+		
 		var btnCancelar = $("#cancelarOP");
 		btnCancelar.css("display","none");
 		$("#cedula").removeAttr('disabled');
@@ -133,15 +143,14 @@ $(document).ready(function(){
 	$(document).on('click','.ver',(response)=> {
 			const cedula = $(this)[0].activeElement;
 			const cedula_usuario = $(cedula).attr('id');
-			console.log(cedula_usuario);
 			 	
 		 $.ajax({
 			type:"GET",
 			url:"http://localhost:8090/api/usuarios/"+cedula_usuario,
 			success: function(response){
-				console.log(response);
+
 				const usuario = response[0];
-				console.log(usuario);
+
 				$("#cedula_modal").html(usuario.cedulaUsuario);
 			 	$("#email_modal").html(usuario.emailUsuario);
 			  	$("#nombre_modal").html(usuario.nombreUsuario);

@@ -55,5 +55,4 @@ public class UsuarioController {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		return usuarioDAO.login(usuario.getUsuario(), usuario.getPassword());
 	}
-	
 }
