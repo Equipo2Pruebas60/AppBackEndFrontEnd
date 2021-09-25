@@ -23,11 +23,11 @@ $(document).ready(function(){
 		let url = '';
 		let type= '';
 		if(flag){
-			url = "http://localhost:8090/proveedores/actualizar/"+nit;
+			url = "http://localhost:8080/proveedores/actualizar/"+nit;
 			type= "PUT";
 			mensaje="Datos del proveedor Actualizados";
 		}else{
-			url = "http://localhost:8090/proveedores/guardar";
+			url = "http://localhost:8080/proveedores/guardar";
 			type= "POST";
 			mensaje="Datos del proveedor Creado";
 		}
@@ -72,7 +72,7 @@ $(document).ready(function(){
 	function listado(){
 	   $.ajax({
 	        type: "GET",
-	        url: "http://localhost:8090/proveedores/listar",  
+	        url: "http://localhost:8080/proveedores/listar",  
 	        success: function(data) {
 				const proveedores = data;
 				let template='';
@@ -99,7 +99,7 @@ $(document).ready(function(){
 		const nitProveedor = $(".borrar").attr('id');
  		$.ajax({
 			type:"DELETE",
-			url:"http://localhost:8090/proveedores/eliminar/"+nitProveedor,
+			url:"http://localhost:8080/proveedores/eliminar/"+nitProveedor,
 			success: function(response){
 				listado();
 				alert("Datos del proveedor Borrados");
@@ -118,7 +118,7 @@ $(document).ready(function(){
 	 	
 		 $.ajax({
 			type:"GET",
-			url:"http://localhost:8090/proveedores/listar/"+nitproveedor,
+			url:"http://localhost:8080/proveedores/listar/"+nitproveedor,
 			success: function(response){
 				
 				const proveedor = response[0];
@@ -152,7 +152,7 @@ $(document).ready(function(){
 			 	
 		 $.ajax({
 			type:"GET",
-			url:"http://localhost:8090/proveedores/listar/"+nitproveedor,
+			url:"http://localhost:8080/proveedores/listar/"+nitproveedor,
 			success: function(response){
 
 				const proveedor = response[0];

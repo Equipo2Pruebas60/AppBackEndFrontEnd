@@ -8,7 +8,7 @@ $(document).ready(function(){
 			type:"POST",
 			async: false,
 			data: JSON.stringify({usuario:$("#usuario").val(), password:$("#password").val()}),
-			url:"http://localhost:8090/usuarios/auth",
+			url:"http://localhost:8080/usuarios/auth",
 			contentType: "application/json",
 			success: function(response){
 				console.log(response);

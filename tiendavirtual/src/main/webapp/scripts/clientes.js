@@ -27,11 +27,11 @@ $(document).ready(function(){
 		let type= '';
 		
 		if(flag){
-			url = "http://localhost:8090/clientes/actualizar/"+cedula;
+			url = "http://localhost:8080/clientes/actualizar/"+cedula;
 			type= "PUT";
 			mensaje="Datos del Usuario Actualizados";	
 		}else{
-			url = "http://localhost:8090/clientes/guardar";
+			url = "http://localhost:8080/clientes/guardar";
 			type= "POST";
 			mensaje="Usuario Creado";
 		}
@@ -72,7 +72,7 @@ $(document).ready(function(){
 	function listado(){
 	   $.ajax({
 	        type: "GET",
-	        url: "http://localhost:8090/clientes/listar",  
+	        url: "http://localhost:8080/clientes/listar",  
 	        success: function(data) {
 				const clientes = data;
 				let template='';
@@ -101,7 +101,7 @@ $(document).ready(function(){
 
  		$.ajax({
 			type:"DELETE",
-			url:"http://localhost:8090/clientes/eliminar/"+cedula,
+			url:"http://localhost:8080/clientes/eliminar/"+cedula,
 			success: function(response){
 				listado();
 				alert("Datos del Cliente Borrados");
@@ -120,7 +120,7 @@ $(document).ready(function(){
 	 	
 		 $.ajax({
 			type:"GET",
-			url:"http://localhost:8090/clientes/listar/"+cedula_cliente,
+			url:"http://localhost:8080/clientes/listar/"+cedula_cliente,
 			success: function(response){
 				
 				const cliente = response[0];
@@ -157,7 +157,7 @@ $(document).ready(function(){
 			 	
 		 $.ajax({
 			type:"GET",
-			url:"http://localhost:8090/clientes/listar/"+cedula_usuario,
+			url:"http://localhost:8080/clientes/listar/"+cedula_usuario,
 			success: function(response){
 				 
 				const cliente = response[0];
