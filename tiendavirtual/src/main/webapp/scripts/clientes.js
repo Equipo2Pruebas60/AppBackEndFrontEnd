@@ -36,7 +36,6 @@ $(document).ready(function(){
 			mensaje="Usuario Creado";
 		}
 		
-		
 		$.ajax({
 	            type: type,
 	            url: url,
@@ -60,6 +59,7 @@ $(document).ready(function(){
 	       		 }
 	    });
 	});
+
 
 	function limpiadoCampos(){
 			  $("#cedula").val("");

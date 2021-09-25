@@ -35,7 +35,7 @@ public class UsuarioDAO {
 		return usuarios;
 	}
 
-	// METODO OBTENER 1 USUARIO
+	// Metodo para listar 1 usuario por su cedula en un arrayList
 	public ArrayList<Usuario> ListUser(int cedula_usuario) {
 		ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 		Connection connection = new Connection();
@@ -62,7 +62,7 @@ public class UsuarioDAO {
 		return usuarios;
 	}
 
-	// METODO CREAR USUARIO
+	// Metodo para crear un nuevo usuario
 	public void createUser(Usuario usuario) {
 		Connection connection = new Connection();
 		try {
@@ -82,7 +82,7 @@ public class UsuarioDAO {
 		}
 	}
 
-	// METODO ELIMINAR USUARIO
+	// Metodo Eliminar usaurio por su cedula registrada
 	public void deleteUser(int cedula_usuario) {
 		Connection connection = new Connection();
 		try {
@@ -97,7 +97,7 @@ public class UsuarioDAO {
 		}
 	}
 
-	// METODO ACTUALIZAR USUARIO
+	// Metodo para actualizar usuario por su cedula registrada
 	public void updateUser(Usuario usuario) {
 		Connection connection = new Connection();
 		try {
@@ -126,7 +126,7 @@ public class UsuarioDAO {
 		}
 	}
 	
-	//Login 
+	//Metodo Login para autenticación de usaurios registrados en la tienda generica
 	public int login(String usuario, String password) {
 		Connection connection = new Connection();
 		int cedula = 0;
@@ -140,6 +140,7 @@ public class UsuarioDAO {
 				cedula = Integer.parseInt(resultSet.getString("cedula_usuario"));
 				System.out.println("Existe el usuario \n");
 			} else {
+				cedula=0;
 				System.out.println("El usuario no se encuentra registrado en la tienda generica");
 			}
 			resultSet.close();
@@ -148,6 +149,11 @@ public class UsuarioDAO {
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 		}
+		
+		if(usuario=="admininicial" && password=="admin123456") {
+			cedula=1;
+		}
+		
 		return cedula;
 	}
 }

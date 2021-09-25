@@ -50,4 +50,5 @@ public class ClienteController {
 		ClienteDAO clienteDAO = new ClienteDAO();
 		clienteDAO.deleteCliente(cedula_cliente);
 	}
+	
 }

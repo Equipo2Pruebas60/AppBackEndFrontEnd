@@ -10,7 +10,6 @@ public class Connection {
 	String url= "jdbc:mysql://localhost/"+database;
 	java.sql.Connection connection = null;
 	
-	
 	public java.sql.Connection getConnection() {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");

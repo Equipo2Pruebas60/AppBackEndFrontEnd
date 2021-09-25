@@ -10,6 +10,7 @@ import com.ubosque.DTO.Clientes;
 
 public class ClienteDAO {
 
+	
 	// Metodo listar clientes
 	public ArrayList<Clientes> listarClientes() {
 		ArrayList<Clientes> clientes = new ArrayList<Clientes>();

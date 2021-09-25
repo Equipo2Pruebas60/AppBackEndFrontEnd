@@ -22,7 +22,7 @@
 
 			<div class="collapse navbar-collapse" id="navbarColor03">
 				<ul class="navbar-nav me-auto">
-					<li class="nav-item"><a class="nav-link " href="#">Usuarios
+					<li class="nav-item"><a class="nav-link active" href="#">Usuarios
 							<span class="visually-hidden">(current)</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link" href="clientes.jsp">Clientes</a>
@@ -57,6 +57,7 @@
 
 					</tbody>
 				</table>
+
 
 			</div>
 		</div>

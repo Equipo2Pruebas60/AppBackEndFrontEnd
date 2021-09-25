@@ -13,6 +13,7 @@
 </head>
 <body>
 
+
 	<table class="table table-dark table-hover">
 		<thead>
 			<tr>
@@ -35,7 +36,6 @@
 	<script
 		src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
 	<script src="scripts/table.js"></script>
-
 
 </body>
 </html>

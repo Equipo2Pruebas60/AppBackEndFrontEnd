@@ -38,4 +38,5 @@ public class Proveedores {
 	public void setTelefonoProveedor(String telefonoProveedor) {
 		this.telefonoProveedor = telefonoProveedor;
 	}
+	
 }

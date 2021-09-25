@@ -10,6 +10,7 @@
 <body>
 	<h2>TIENDA GENERICA</h2>
 
+
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Grupo 60</a>
@@ -120,10 +121,10 @@
 				</div>
 				<div class="modal-body">
 				
-				Cedula     :<label id="cedula_modal"></label><br>
-				Email	   :<label id="email_modal"></label><br>
-				Contraseña : <label id="clave_modal"></label><br>
-				Usuario    : <label id="usuario_modal"></label><br>
+				nit     :<label id="nit_modal"></label><br>
+				ciudad	   :<label id="ciudad_modal"></label><br>
+				dirección : <label id="direccion_modal"></label><br>
+				telefono    : <label id="telefono_modal"></label><br>
 				
 				
 			</div>

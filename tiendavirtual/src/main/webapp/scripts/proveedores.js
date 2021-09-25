@@ -52,6 +52,9 @@ $(document).ready(function(){
 					
 					alert(mensaje);
 					
+					var btnCancelar = $("#cancelarOP");
+					btnCancelar.css("display","none");
+					
 					$("#nit").removeAttr('disabled');
 	        }
 	    });
@@ -64,6 +67,7 @@ $(document).ready(function(){
 		 	  $("#nombre").val("");
 		 	  $("#telefono").val("");
 	}
+	
 	
 	function listado(){
 	   $.ajax({
@@ -106,7 +110,6 @@ $(document).ready(function(){
 	$(document).on('click','.modificar',(response)=> {
 			const nit_p = $(this)[0].activeElement;
 			const nitproveedor = $(nit_p).attr('id');
-			console.log(nitptoveedor);
 			
 			var btnCancelar = $("#cancelarOP");
 			btnCancelar.css("display","block");
@@ -144,21 +147,21 @@ $(document).ready(function(){
 	
 	
 	$(document).on('click','.ver',(response)=> {
-			const cedula = $(this)[0].activeElement;
-			const cedula_usuario = $(cedula).attr('id');
+			const nit_p = $(this)[0].activeElement;
+			const nitproveedor = $(nit_p).attr('id');
 			 	
 		 $.ajax({
 			type:"GET",
-			url:"http://localhost:8090/proveedor/listar/"+cedula_usuario,
+			url:"http://localhost:8090/proveedores/listar/"+nitproveedor,
 			success: function(response){
 
-				const usuario = response[0];
+				const proveedor = response[0];
 
-				$("#cedula_modal").html(usuario.cedulaUsuario);
-			 	$("#email_modal").html(usuario.emailUsuario);
-			  	$("#nombre_modal").html(usuario.nombreUsuario);
-			 	$("#clave_modal").html(usuario.password);
-			 	$("#usuario_modal").html(usuario.usuario);
+				$("#nit_modal").html(proveedor.nitProveedor);
+			 	$("#ciudad_modal").html(proveedor.ciudadProveedor);
+			  	$("#direccion_modal").html(proveedor.direccionProveedor);
+			 	$("#nombre_modal").html(proveedor.nombreProveedor);
+			 	$("#telefono_modal").html(proveedor.telefonoProveedor);
 				
 			}
 		});

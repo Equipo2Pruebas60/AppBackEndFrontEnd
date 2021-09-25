@@ -32,8 +32,6 @@ $(document).ready(function(){
 			mensaje="Usuario Creado";
 		}
 
-
-
 		$.ajax({
 	            type: type,
 	            url: url,
@@ -49,6 +47,9 @@ $(document).ready(function(){
 					flag = false;
 					
 					alert(mensaje);
+					
+					var btnCancelar = $("#cancelarOP");
+					btnCancelar.css("display","none");
 					
 					$("#cedula").removeAttr('disabled');
 	        }

@@ -10,7 +10,6 @@
 <body>
 	<h2>TIENDA GENERICA</h2>
 
-
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Grupo 60</a>
@@ -37,7 +36,9 @@
 			</div>
 		</div>
 	</nav>
-	<input type="text" value=>
+	<br><br><br>
+	<br><br><br>
+	<h5>Selecciona una opción a descubrir.... Clientes, Usuarios y Proveedores</h5>
 	
 	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>

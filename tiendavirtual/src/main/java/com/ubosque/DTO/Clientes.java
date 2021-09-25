@@ -2,7 +2,6 @@ package com.ubosque.DTO;
 
 public class Clientes {
 
-	
 	private int cedulaCliente;
 	private String direccionCliente;
 	private String emailCliente;

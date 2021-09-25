@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/usuarios")
 public class UsuarioController {
 
-	
 	@RequestMapping("listar")
 	public ArrayList<Usuario> listaUsuario() {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
@@ -51,9 +50,10 @@ public class UsuarioController {
 		usuarioDAO.updateUser(usuario);
 	}
 	
-	@PostMapping("usuarios/auth")
+	@PostMapping("auth")
 	public int auth(@RequestBody Usuario usuario) {
 		UsuarioDAO usuarioDAO = new UsuarioDAO();
 		return usuarioDAO.login(usuario.getUsuario(), usuario.getPassword());
 	}
+	
 }

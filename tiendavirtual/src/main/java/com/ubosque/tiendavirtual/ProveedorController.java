@@ -51,5 +51,4 @@ public class ProveedorController {
 		ProveedorDAO provedorDAO = new ProveedorDAO();
 		provedorDAO.updateProveedor(proveedores);
 	}
-	
 }

@@ -13,6 +13,7 @@ import com.ubosque.DTO.Proveedores;
 public class ProveedorDAO {
 
 	// Metodo listar proveedor
+	
 	public ArrayList<Proveedores> listarProveedores() {
 		ArrayList<Proveedores> proveedores = new ArrayList<Proveedores>();
 		Connection connection = new Connection();
