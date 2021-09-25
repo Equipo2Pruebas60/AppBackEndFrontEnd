@@ -10,8 +10,6 @@
 <body>
 	<h2>TIENDA GENERICA</h2>
 
-
-
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Grupo 60</a>
@@ -24,12 +22,12 @@
 
 			<div class="collapse navbar-collapse" id="navbarColor03">
 				<ul class="navbar-nav me-auto">
-					<li class="nav-item"><a class="nav-link active" href="#">Usuarios
+					<li class="nav-item"><a class="nav-link " href="#">Usuarios
 							<span class="visually-hidden">(current)</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link" href="clientes.jsp">Clientes</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Proveedores</a>
+					<li class="nav-item"><a class="nav-link" href="proveedores.jsp">Proveedores</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Ventas</a></li>

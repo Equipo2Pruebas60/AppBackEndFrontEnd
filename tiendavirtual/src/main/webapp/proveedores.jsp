@@ -10,7 +10,6 @@
 <body>
 	<h2>TIENDA GENERICA</h2>
 
-
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Grupo 60</a>
@@ -26,10 +25,10 @@
 					<li class="nav-item"><a class="nav-link " href="usuarios.jsp">Usuarios
 							
 					</a></li>
-					<li class="nav-item"><a class="nav-link active" href="#">Clientes</a>
-						<span class="visually-hidden">(current)</span>
+					<li class="nav-item"><a class="nav-link " href="clientes.jsp">Clientes</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="proveedores.jsp">Proveedores</a>
+					<li class="nav-item"><a class="nav-link active" href="#">Proveedores
+					<span class="visually-hidden">(current)</span></a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Ventas</a></li>
@@ -46,11 +45,11 @@
 					class="table table-dark table-hover table-sm table-bordered  ">
 					<thead>
 						<tr>
-							<td class="text-lowercase" style="font-size: 16px;">Cedula</td>
-							<td class="text-lowercase" style="font-size: 16px;">Dirección</td>
-							<td class="text-lowercase" style="font-size: 16px;">Email</td>
-							<td class="text-lowercase" style="font-size: 16px;">Nombre</td>
-							<td class="text-lowercase" style="font-size: 16px;">Telefono</td>
+							<td class="text-lowercase" style="font-size: 16px;">nitProveedor</td>
+							<td class="text-lowercase" style="font-size: 16px;">ciudad</td>
+							<td class="text-lowercase" style="font-size: 16px;">dirección</td>
+							<td class="text-lowercase" style="font-size: 16px;">nombre</td>
+							<td class="text-lowercase" style="font-size: 16px;">telefono</td>
 							<td class="text-lowercase" style="font-size: 16px;">Ver</td>
 							<td class="text-lowercase" style="font-size: 16px;">Modificar</td>
 							<td class="text-lowercase" style="font-size: 16px;">Eliminar</td>
@@ -68,18 +67,18 @@
 			<div class="container p-2" style="border: 1px solid #BEB8B6;">
 				<form id="formulario">
 					<div class="form-group">
-						<label for="cedula">Cedula</label> <input type="text"
-							class="form-control" id="cedula" placeholder="Ingresar cedula" required>
+						<label for="nit">Nit</label> <input type="text"
+							class="form-control" id="nit" placeholder="Ingresar Nit" required>
 					</div>
 
 					<div class="form-group">
-						<label for="email">Dirección</label> <input type="text"
-							class="form-control" id="direccion" placeholder="Ingresar dirección" required>
+						<label for="ciudad">Ciudad</label> <input type="text"
+							class="form-control" id="ciudad" placeholder="Ingresar ciudad" required>
 					</div>
-					
+
 					<div class="form-group">
-						<label for="email">Email</label> <input type="email"
-							class="form-control" id="email" placeholder="Ingresar cedula" required>
+						<label for="direccion">Dirección</label> <input type="text"
+							class="form-control" id="direccion" placeholder="Ingresar dirección" required>
 					</div>
 
 					<div class="form-group">
@@ -88,10 +87,9 @@
 					</div>
 
 					<div class="form-group">
-						<label for="clave">Telefono</label> <input type="text"
+						<label for="telefono">Telefono</label> <input type="text"
 							class="form-control" id="telefono" placeholder="Ingresar telefono" required>
 					</div>
-
 
 					<div class="row">
 						<div class="col-md-8">
@@ -104,12 +102,11 @@
 								class="btn btn-danger mt-3 cancelar">X</button>
 						</div>
 					</div>
-
 				</form>
 			</div>
-
 		</div>
 	</div>
+
 
 	<!-- Modal -->
 	<div class="modal fade" id="exampleModal" tabindex="-1"
@@ -123,10 +120,11 @@
 				</div>
 				<div class="modal-body">
 				
-				Cedula      :<label id="cedula_modal"></label><br>
-				Dirección   :<label id="direccion_modal"></label><br>
-				Email       :<label id="email_modal"></label><br>
-				Telefono    : <label id="telefono_modal"></label><br>
+				Cedula     :<label id="cedula_modal"></label><br>
+				Email	   :<label id="email_modal"></label><br>
+				Contraseña : <label id="clave_modal"></label><br>
+				Usuario    : <label id="usuario_modal"></label><br>
+				
 				
 			</div>
 				<div class="modal-footer">
@@ -138,13 +136,12 @@
 	</div>
 
 
-
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"
 		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 		crossorigin="anonymous"></script>
 	
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
-	<script src="scripts/clientes.js"></script>
+	<script src="scripts/proveedores.js"></script>
 
 </body>
 </html>
