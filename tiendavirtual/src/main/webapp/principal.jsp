@@ -25,9 +25,9 @@
 					<li class="nav-item"><a class="nav-link active" href="usuarios.jsp">Usuarios
 							<span class="visually-hidden">(current)</span>
 					</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Clientes</a>
+					<li class="nav-item"><a class="nav-link" href="clientes.jsp">Clientes</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Proveedores</a>
+					<li class="nav-item"><a class="nav-link" href="proveedores.jsp">Proveedores</a>
 					</li>
 					<li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
 					<li class="nav-item"><a class="nav-link" href="#">Ventas</a></li>
