@@ -5,7 +5,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Login tienda</title>
+<title>Login tienda grupo60</title>
 <link rel="stylesheet" href="css/login.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
