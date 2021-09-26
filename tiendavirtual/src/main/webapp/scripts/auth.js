@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	console.log("JQuery funcionando");
 	
+	
 	$("#formulario").submit(e => {
 		e.preventDefault();
 	 	
