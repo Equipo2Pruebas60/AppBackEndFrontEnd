@@ -26,7 +26,6 @@
 						id="password" name="password" placeholder="Ingresa tu contraseña" />
 				</div>
 
-
 				<div class="campos bg-info d-grid gap-2">
 					<input type="submit" class="btn btn-primary" value="Iniciar Sesión" />
 				</div>
