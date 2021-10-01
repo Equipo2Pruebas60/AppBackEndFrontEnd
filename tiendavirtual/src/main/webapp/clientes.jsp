@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h2>TIENDA GENERICA</h2>
-
+	asasasa
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Grupo 60</a>
@@ -46,7 +46,7 @@
 					<thead>
 						<tr>
 							<td class="text-lowercase" style="font-size: 16px;">Cedula</td>
-							<td class="text-lowercase" style="font-size: 16px;">Direcci髇</td>
+							<td class="text-lowercase" style="font-size: 16px;">Direcci贸n</td>
 							<td class="text-lowercase" style="font-size: 16px;">Email</td>
 							<td class="text-lowercase" style="font-size: 16px;">Nombre</td>
 							<td class="text-lowercase" style="font-size: 16px;">Telefono</td>
@@ -72,8 +72,8 @@
 					</div>
 
 					<div class="form-group">
-						<label for="email">Direcci髇</label> <input type="text"
-							class="form-control" id="direccion" placeholder="Ingresar direcci髇" required>
+						<label for="email">Direcci贸n</label> <input type="text"
+							class="form-control" id="direccion" placeholder="Ingresar direcci贸n" required>
 					</div>
 					
 					<div class="form-group">
@@ -123,7 +123,7 @@
 				<div class="modal-body">
 				
 				Cedula      :<label id="cedula_modal"></label><br>
-				Direcci髇   :<label id="direccion_modal"></label><br>
+				Direcci贸n   :<label id="direccion_modal"></label><br>
 				Email       :<label id="email_modal"></label><br>
 				Telefono    : <label id="telefono_modal"></label><br>
 				
