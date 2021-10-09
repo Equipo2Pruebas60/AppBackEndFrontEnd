@@ -9,7 +9,7 @@
 </head>
 <body>
 	<h2>TIENDA GENERICA</h2>
-
+	prueba
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container-fluid">
 			<a class="navbar-brand" href="#">Grupo 60</a>
@@ -82,7 +82,7 @@
 
 					<div class="form-group">
 						<label for="clave">Password</label> <input type="password"
-							class="form-control" id="clave" placeholder="Ingresar contraseña" required>
+							class="form-control" id="clave" placeholder="Ingresar contraseÃ±a" required>
 					</div>
 
 					<div class="form-group">
@@ -123,7 +123,7 @@
 				
 				Cedula     :<label id="cedula_modal"></label><br>
 				Email	   :<label id="email_modal"></label><br>
-				Contraseña : <label id="clave_modal"></label><br>
+				ContraseÃ±a : <label id="clave_modal"></label><br>
 				Usuario    : <label id="usuario_modal"></label><br>
 				
 				
