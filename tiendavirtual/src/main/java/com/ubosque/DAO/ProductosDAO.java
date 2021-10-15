@@ -1,26 +1,18 @@
 package com.ubosque.DAO;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JOptionPane;
-
 import com.ubosque.DTO.Productos;
 import com.ubosque.DTO.Proveedores;
-import com.ubosque.DTO.Usuario;
 import com.univocity.parsers.common.record.Record;
 import com.univocity.parsers.csv.CsvParser;
 import com.univocity.parsers.csv.CsvParserSettings;
-
-import org.springframework.web.multipart.MultipartException;
 import org.springframework.web.multipart.MultipartFile;
 
 
@@ -36,7 +28,7 @@ public class ProductosDAO {
 		CsvParser parser= new CsvParser(settings);
 		List<Record> records =  parser.parseAllRecords(inputStream);
 		records.forEach(record->{
-			Productos producto= new Productos(Integer.parseInt(record.getString("codigoProducto")),record.getString("nombreProducto"),Integer.parseInt(record.getString("nitproveedor")),Double.parseDouble(record.getString("preciocompra")),Double.parseDouble(record.getString("ivaVenta")),Double.parseDouble(record.getString("precioVenta")));
+			Productos producto= new Productos(Integer.parseInt(record.getString("codigoProducto")),record.getString("nombreProducto"),Integer.parseInt(record.getString("nitproveedor")),Double.parseDouble(record.getString("precioCompra")),Double.parseDouble(record.getString("ivaventa")),Double.parseDouble(record.getString("precioVenta")));
 			productos.add(producto);
 		});
 		return(productos);
@@ -83,7 +75,7 @@ public class ProductosDAO {
 			
 	}
 
-	// comentario
+	// Método leer productos
 	public ArrayList<Productos> listProductos() {
 		ArrayList<Productos> productos = new ArrayList<Productos>();
 		Connection connection = new Connection();
@@ -110,4 +102,61 @@ public class ProductosDAO {
 			}
 			return productos;
 		}
+	
+	// Metodo borrar producto
+		public void deleteProducto(int codigoProducto) {
+			Connection connection = new Connection();
+			try {
+
+				PreparedStatement statement = connection.getConnection()
+						.prepareStatement("delete from productos where codigo_producto=?");
+				statement.setInt(1, codigoProducto);
+
+				int result = statement.executeUpdate();
+
+				if (result == 1) {
+					System.out.print("Producto Eliminado");
+				} else {
+					System.out.print("Ha ocurrido un error");
+				}
+
+				statement.close();
+
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		
+		
+		//listar un producto por codigo de producto
+		public ArrayList<Productos> listarProducto(int codigoProducto) {
+			ArrayList<Productos> productos = new ArrayList<Productos>();
+			Connection connection = new Connection();
+
+			
+			try {
+				PreparedStatement statement = connection.getConnection().prepareStatement("SELECT * FROM productos WHERE codigo_producto=?");
+				statement.setInt(1, codigoProducto);
+				ResultSet result = statement.executeQuery();
+					while(result.next()) {
+						
+						Productos producto = new Productos();
+						producto.setCodigoProducto(Integer.parseInt(result.getString("codigo_producto")));
+						producto.setIvaventa(Double.parseDouble(result.getString ("ivaventa")));
+						producto.setNitproveedor(Integer.parseInt(result.getString("nitproveedor")));
+						producto.setNombreProducto(result.getString("nombre_producto"));
+						producto.setPrecioCompra(Double.parseDouble(result.getString ("precio_compra")));
+						producto.setPrecioVenta(Double.parseDouble(result.getString ("precio_venta")));
+						productos.add(producto);
+					}
+					result.close();
+					statement.close();
+					connection.connection.close();
+				} catch (SQLException e) {
+					JOptionPane.showMessageDialog(null, "no se pudo realizar la consulta\n" + e);
+				}
+				return productos;
+			}
+
+
 }

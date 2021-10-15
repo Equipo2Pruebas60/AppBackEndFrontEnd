@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 	
 		listado();
@@ -28,10 +27,14 @@ $(document).ready(function(){
     contentType: false,
     processData: false,
     enctype: 'multipart/form-data',
+	success: function(response){
+				listado();
+				alert("Archivo subido");
+			 }
 				})
-				
+		 
 		}
-		alert("Archivo subido");
+		
 
 		})
 		
@@ -49,11 +52,11 @@ $(document).ready(function(){
 							<td style="font-size: 13px">${producto.ivaventa}</td>
 							<td style="font-size: 13px">${producto.nitproveedor}</td>
 							<td style="font-size: 13px">${producto.nombreProducto}</td>
-							<td style="font-size: 13px">${producto.precioVenta}</td>
 							<td style="font-size: 13px">${producto.precioCompra}</td>
-							<td style="font-size: 13px" ><button id="${producto.cedulaUsuario}"   type="button" class="btn btn-info ver p-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver</button></td>
-							<td style="font-size: 13px" ><button id="${producto.cedulaUsuario}"   type="button" class="btn btn-info modificar p-1">Modificar</button></td>
-							<td style="font-size: 13px" ><button id="${producto.cedulaUsuario}"   type="button" class="btn btn-danger borrar p-1" >Eliminar</button></td>
+							<td style="font-size: 13px">${producto.precioVenta}</td>
+							<td style="font-size: 13px" ><button id="${producto.codigoProducto}"   type="button" class="btn btn-info ver p-1" data-bs-toggle="modal" data-bs-target="#exampleModal">Ver</button></td>
+							<td style="font-size: 13px" ><button id="${producto.codigoProducto}"   type="button" class="btn btn-info modificar p-1">Modificar</button></td>
+							<td style="font-size: 13px" ><button id="${producto.codigoProducto}"   type="button" class="btn btn-danger borrar p-1" >Eliminar</button></td>
 							
 						</tr>
 					`
@@ -62,6 +65,18 @@ $(document).ready(function(){
 	         }
 	      });
 	}
+	
+	$(document).on('click','.borrar',(response)=> {
+		const codigo = $(".borrar").attr('id');
+ 		$.ajax({
+			type:"DELETE",
+			url:"http://localhost:8080/productos/eliminar/"+codigo,
+			success: function(response){
+				listado();
+				alert("Producto borrado");
+			}
+		});
+	});
 		
 	
 	})
