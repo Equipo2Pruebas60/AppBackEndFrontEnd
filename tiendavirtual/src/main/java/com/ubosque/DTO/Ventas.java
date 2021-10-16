@@ -10,6 +10,7 @@ public class Ventas {
 	private double ivaVenta;
 	private double total_venta;
 	private double valor_venta;
+	
 	public int getCodigoVenta() {
 		return codigoVenta;
 	}

@@ -97,6 +97,7 @@ public class ProductosDAO {
 				}
 				result.close();
 				statement.close();
+				connection.connection.close();
 			} catch (SQLException e) {
 				JOptionPane.showMessageDialog(null, "no se pudo realizar la consulta\n" + e);
 			}
@@ -121,6 +122,7 @@ public class ProductosDAO {
 				}
 
 				statement.close();
+				connection.connection.close();
 
 			} catch (SQLException e) {
 				System.out.println(e.getMessage());

@@ -34,6 +34,9 @@ $(document).on('click', '#buscarProducto1', () => {
 		success: function(response) {
 
 			const producto1 = response[0];
+			if(Object.keys(response).length===0){ 
+				alert("El producto no se encontro");
+				return null};
 
 			$("#nombreProducto1").val(producto1.nombreProducto);
 			valorProducto1=producto1.precioVenta;
@@ -72,6 +75,9 @@ $(document).on('click', '#buscarProducto2', () => {
 		success: function(response) {
 
 			const producto2 = response[0];
+			if(Object.keys(response).length===0){ 
+				alert("El producto no se encontro");
+				return null};
 
 			$("#nombreProducto2").val(producto2.nombreProducto);
 			valorProducto2=producto2.precioVenta;
@@ -108,6 +114,9 @@ $(document).on('click', '#buscarProducto3', () => {
 		success: function(response) {
 
 			const producto3 = response[0];
+			if(Object.keys(response).length===0){ 
+				alert("El producto no se encontro");
+				return null};
 
 			$("#nombreProducto3").val(producto3.nombreProducto);
 			valorProducto3=producto3.precioVenta;
@@ -193,9 +202,9 @@ function guardarDetalleVenta1(){
 			cantidadProducto: $("#Cantidad1").val(),
 			codigoProducto: $("#CodProducto1").val(),
 			codigoVenta: codigo,
-			valorVenta: $("#valorVenta1").val(),
+			valorVenta: valorProducto1,
 			valorIva: Math.round(ivaVenta1),
-			valorTotal: valorTotal1,
+			valorTotal: $("#valorVenta1").val(),
 		}),
 		success: function(response) {
 			console.log("GuardaDetalle");},
@@ -212,9 +221,9 @@ function guardarDetalleVenta2(){
 			cantidadProducto: $("#Cantidad2").val(),
 			codigoProducto: $("#CodProducto2").val(),
 			codigoVenta: codigo,
-			valorVenta: $("#valorVenta2").val(),
+			valorVenta: valorProducto2,
 			valorIva: Math.round(ivaVenta2),
-			valorTotal: valorTotal2,
+			valorTotal: $("#valorVenta2").val(),
 		}),
 		contentType: "application/json"
 	});
@@ -228,9 +237,9 @@ function guardarDetalleVenta3(){
 			cantidadProducto: $("#Cantidad3").val(),
 			codigoProducto: $("#CodProducto3").val(),
 			codigoVenta: codigo,
-			valorVenta: $("#valorVenta3").val(),
+			valorVenta: valorProducto3,
 			valorIva: Math.round(ivaVenta3),
-			valorTotal: valorTotal3,
+			valorTotal: $("#valorVenta3").val(),
 		}),
 		contentType: "application/json"
 	});

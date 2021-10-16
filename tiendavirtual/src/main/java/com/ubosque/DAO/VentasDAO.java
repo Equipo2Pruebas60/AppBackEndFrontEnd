@@ -19,14 +19,23 @@ public class VentasDAO {
 		public void crearVenta(Ventas ventas) {
 			Connection connection = new Connection();
 			try {
-				String query = "INSERT INTO ventas (cedula_cliente, cedula_usuario, ivaventa, total_venta, valor_venta )VALUES (?,?,?,?,?)";
+				int codigo=0;
+				String query = "SELECT max(codigo_venta) as codigo FROM ventas";
 				PreparedStatement statement = connection.getConnection().prepareStatement(query);
-				//statement.setInt(1, ventas.getCodigoVenta());
-				statement.setInt(1, ventas.getCedulaCliente());
-				statement.setInt(2, ventas.getCedulaUsuario());
-				statement.setDouble(3, ventas.getIvaVenta());
-				statement.setDouble(4, ventas.getTotal_venta());
-				statement.setDouble(5, ventas.getValor_venta());
+				ResultSet resultSet = statement.executeQuery();
+				if (resultSet.next()) {
+					codigo = resultSet.getInt("codigo");
+					System.out.println("Existe el código \n");
+				} 
+				
+				query = "INSERT INTO ventas (codigo_venta, cedula_cliente, cedula_usuario, ivaventa, total_venta, valor_venta )VALUES (?,?,?,?,?,?)";
+				statement = connection.getConnection().prepareStatement(query);
+				statement.setInt(1, codigo+1);
+				statement.setInt(2, ventas.getCedulaCliente());
+				statement.setInt(3, ventas.getCedulaUsuario());
+				statement.setDouble(4, ventas.getIvaVenta());
+				statement.setDouble(5, ventas.getTotal_venta());
+				statement.setDouble(6, ventas.getValor_venta());
 				
 				statement.executeUpdate();
 				System.out.println("La venta fué registrada");
